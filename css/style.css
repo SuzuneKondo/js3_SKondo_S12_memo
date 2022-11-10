@@ -1,0 +1,150 @@
+html {
+    font-size: 62.5%;/* 16px*62.5%=10px */
+    font: optional;
+    background-color: #FFF0A3;
+    color: #4D3A33;
+}
+
+header{
+    background-color: #B38D6F;
+    text-align: center;
+    font-size: 2.8rem;
+}
+
+main{
+    width:100%;
+    display: block;
+    position:relative;
+    font-size: 1.6rem;
+}
+footer{
+    background-color: lavender;
+    text-align: center;
+}
+
+ul{
+    padding: 0;
+    /* border-top: 1px solid #000000; */
+    display:table;  /* 定義 */
+    table-layout: fixed;
+    width:96%;
+    margin: 0 3%;
+    text-align: center;
+    padding: 10px 0;
+}
+li{
+    list-style-type:none;
+    background-color: #FFF9DB;
+    display:table-cell;  /* 定義 */
+    cursor: pointer;
+}
+li:hover{
+    color:#fff;
+}
+textarea{
+    margin: auto;
+    width: 60%;
+    height: 100px;
+    background-color: #FFF9DB;
+    border: solid 1px #BFBFBF;
+}
+
+input{
+    background-color: #FFF9DB;
+}
+
+.t-area{
+    margin: auto;
+}
+
+table{
+    margin: 20px 3%;
+    /* border:1px solid #8dc3f5; */
+    width:96%;
+}
+
+/* ヘッダー */
+.header-title{
+    padding: 50px 0;
+}
+
+
+/* 入力テーブル */
+.memopad{
+    max-width: 800px;
+    background-color: #F1E0CD;
+    margin: 50px auto;
+}
+
+#save{
+    font-size: 2.0rem;
+}
+
+#clear{
+    font-size: 2.0rem;
+}
+
+.key-wrapper{
+    margin: 0 auto;
+}
+
+.item-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+}
+
+.dt-item{
+    font-size: 2.0rem;
+    text-align: center;
+    width: 30%;
+    margin: 5px 0;
+}
+
+.dd-item{
+    font-size: 2.0rem;
+    text-align: left;
+    width: 70%;
+    margin: 5px 0;
+}
+
+.form-parts{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: 20px;
+    border: solid 1px #BFBFBF;
+    font-size: 16px;
+}
+
+/* フッター */
+.footer-p{
+    font-size: 1.6rem;
+}
+
+/* js用 */
+.record{
+    background-color: #FFF9DB;
+}
+
+.dl-text{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+    font-size: 2.0rem;
+}
+
+.dt-text{
+    width:30%;
+    font-size: 2.0rem;
+}
+.dd-text{
+    width:70%;
+    font-size: 2.0rem;
+}
