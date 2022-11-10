@@ -2,7 +2,6 @@
 // console.log("接続OK")
 // alert("www")
 
-
 $("#save").on('click', function () {
 
     let key = $("#key").val();
