@@ -2,6 +2,9 @@
 // console.log("接続OK")
 // alert("www")
 
+//多次元配列の箱作る
+var array=[];
+
 $("#save").on('click', function () {
 
     let key = $("#key").val();
@@ -11,12 +14,12 @@ $("#save").on('click', function () {
     let price = $("#price").val();
     let memo = $("#memo").val();
 
-    console.log(key, '1データが取れてるかチェック')
-    console.log(shop, '2データが取れてるかチェック')
-    console.log(puname, '3データが取れてるかチェック')
-    console.log(address, '4データが取れてるかチェック')
-    console.log(price, '5データが取れてるかチェック')
-    console.log(memo, '6データが取れてるかチェック')
+    // console.log(key, '1データが取れてるかチェック')
+    // console.log(shop, '2データが取れてるかチェック')
+    // console.log(puname, '3データが取れてるかチェック')
+    // console.log(address, '4データが取れてるかチェック')
+    // console.log(price, '5データが取れてるかチェック')
+    // console.log(memo, '6データが取れてるかチェック')
 
     const puddingData = {
       key: key,
@@ -28,6 +31,12 @@ $("#save").on('click', function () {
     }
 
     // console.log(puddingData)
+
+    //arrayにarray+puddingData変数を足している
+    //→saveされるごとにarrayにデータ追加して保存されていく
+    array=array.concat(puddingData);
+    array2=JSON.stringify(array);
+    localStorage.setItem("array2" ,array2);
 
     // 書き込み ※JavaScriptオブジェクト -> JSON文字列に変換
     const allData = JSON.stringify(puddingData);
@@ -77,32 +86,48 @@ $("#clear").on("click",function(){
 
 
 // 3.ページ読み込み：保存データ取得表示
-for (let i = 0; i < localStorage.length; i++) {
-            const dataKey = localStorage.key(i);
-            const dKey = localStorage.getItem(dataKey);
-            const OBJ = JSON.parse(dKey);
-            const key =OBJ.key
-            const shop=OBJ.shop
-            const puname=OBJ.puname
-            const address=OBJ.address
-            const price=OBJ.price
-            const memo=OBJ.memo
+
+var jsonObj=localStorage.getItem('array2');
+var n =JSON.parse(jsonObj);
+
+for (let i = 0; i < n.length; i++) {
+
+    var jsObj=n[i];
+
+    var jsObj2={
+        kekka1:jsObj.key,
+        kekka2:jsObj.shop,
+        kekka3:jsObj.puname,
+        kekka4:jsObj.address,
+        kekka5:jsObj.price,
+        kekka6:jsObj.memo
+    }
+
+            // const dataKey = localStorage.key(i);
+            // const dKey = localStorage.getItem(dataKey);
+            // const OBJ = JSON.parse(dKey);
+            // const key =OBJ.key
+            // const shop=OBJ.shop
+            // const puname=OBJ.puname
+            // const address=OBJ.address
+            // const price=OBJ.price
+            // const memo=OBJ.memo
             
             const html = `
             <div class="record">
             <dl class="dl-text">
                 <dt class="dt-text">題名：</dt>
-                <dd class="dd-text">${key}</dd>
+                <dd class="dd-text">${jsObj2.kekka1}</dd>
                 <dt class="dt-text">店名：</dt>
-                <dd class="dd-text">${shop}</dd>
+                <dd class="dd-text">${jsObj2.kekka2}</dd>
                 <dt class="dt-text">🍮名：</dt>
-                <dd class="dd-text">${puname}</dd>
+                <dd class="dd-text">${jsObj2.kekka3}</dd>
                 <dt class="dt-text">地域：</dt>
-                <dd class="dd-text">${address}</dd>
+                <dd class="dd-text">${jsObj2.kekka4}</dd>
                 <dt class="dt-text">価格：</dt>
-                <dd class="dd-text">${price}</dd>
+                <dd class="dd-text">${jsObj2.kekka5}</dd>
                 <dt class="dt-text">その他記録：</dt>
-                <dd class="dd-text">${memo}</dd>
+                <dd class="dd-text">${jsObj2.kekka6}</dd>
             </dl>
             </div>
             `
